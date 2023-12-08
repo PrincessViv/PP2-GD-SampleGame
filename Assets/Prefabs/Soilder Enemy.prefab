@@ -599,12 +599,18 @@ MonoBehaviour:
   navAgent: {fileID: 4937867714704947991}
   model: {fileID: 4937867715143043180}
   headPos: {fileID: 4937867714346718886}
+  anim: {fileID: 4937867714704947992}
+  weaponCol: {fileID: 0}
+  damageCol: {fileID: 0}
   HP: 5
   viewCone: 90
   targetFaceSpeed: 20
+  roamDist: 10
+  roamPauseTime: 3
+  animLerpSpeed: 0
   shootRate: 1
-  bullet: {fileID: 6679021518325025945, guid: 1f2f6468c923262459d407a7315f1351, type: 3}
   shootPos: {fileID: 4937867714938239699}
+  bullet: {fileID: 6679021518325025945, guid: 1f2f6468c923262459d407a7315f1351, type: 3}
 --- !u!195 &4937867714704947991
 NavMeshAgent:
   m_ObjectHideFlags: 0
@@ -667,7 +673,7 @@ Animator:
   m_Controller: {fileID: 0}
   m_CullingMode: 1
   m_UpdateMode: 0
-  m_ApplyRootMotion: 1
+  m_ApplyRootMotion: 0
   m_LinearVelocityBlending: 0
   m_StabilizeFeet: 0
   m_WarningMessage: 
@@ -824,7 +830,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4937867714938239698}
   m_LocalRotation: {x: -0.06718439, y: 0.53014684, z: 0.047258884, w: 0.8439177}
-  m_LocalPosition: {x: -1.467, y: -0.147, z: 0.118}
+  m_LocalPosition: {x: -1.59, y: -0.17, z: 0.06}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

@@ -18,7 +18,7 @@ public class GManager : MonoBehaviour
     float timeScaleOrig;
     int enemiesRemaining;
     public Image playerHPBar;
-    
+
     [SerializeField] GameObject menuActive;
     [SerializeField] GameObject menuPause;
     [SerializeField] GameObject menuWin;
@@ -41,7 +41,7 @@ public class GManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        if (Input.GetButtonDown("Cancel") 
+        if (Input.GetButtonDown("Cancel")
         && menuActive == null)
         {
             StatePaused();
@@ -79,8 +79,17 @@ public class GManager : MonoBehaviour
             StatePaused();
             menuActive = menuWin;
             menuActive.SetActive(true);
-            
+
         }
+    }
+
+    IEnumerator YouWin()
+    {
+        yield return new WaitForSeconds(3);
+        StatePaused();
+        menuActive = menuWin;
+        menuActive.SetActive(true);
+
     }
 
     public void YouLose()
