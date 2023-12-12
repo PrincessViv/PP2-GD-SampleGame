@@ -123,7 +123,7 @@ public class EnemyAI : MonoBehaviour, IDamage
 
     void FaceTarget() // or FaceTarget(Transform target)
     {
-        Quaternion rot = Quaternion.LookRotation(new Vector3(playerDir.x, 
+        Quaternion rot = Quaternion.LookRotation(new Vector3(playerDir.x,
         transform.position.y, playerDir.z));
         transform.rotation = Quaternion.Lerp(transform.rotation, rot,
         Time.deltaTime * targetFaceSpeed);
@@ -173,6 +173,9 @@ public class EnemyAI : MonoBehaviour, IDamage
     public void TakeDamage(int amount)
     {
         HP -= amount;
+
+        StopAllCoroutines();
+
         if (HP <= 0)
         {
             GManager.instance.UpdateGameGoal(-1);
@@ -183,12 +186,16 @@ public class EnemyAI : MonoBehaviour, IDamage
 
         else
         {
-            StopAllCoroutines();
             isShooting = false;
             anim.SetTrigger("Damage");
             destinationChosen = false;
-             StartCoroutine(FlashRed());
-             navAgent.SetDestination(GManager.instance.player.transform.position);
+            StartCoroutine(FlashRed());
+
+            //if (navAgent.isActiveAndEnabled)
+            //{
+            navAgent.SetDestination(GManager.instance.
+            player.transform.position);
+            //}
         }
     }
 

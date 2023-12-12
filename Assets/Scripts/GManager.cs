@@ -23,6 +23,7 @@ public class GManager : MonoBehaviour
     [SerializeField] GameObject menuPause;
     [SerializeField] GameObject menuWin;
     [SerializeField] GameObject menuLose;
+    public GameObject playerDamageScreen;
 
     [SerializeField] TMP_Text enemyCountText;
 
